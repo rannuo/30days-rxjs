@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,body {
+      height: 100%;
+    }
+    #drag {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+  </style>
+  <script src="./node_modules/rxjs/bundles/rxjs.umd.js"></script>
+  <script>
+    window.Rx = rxjs;
+  </script>
+</head>
+<body>
+  <div id="drag"></div>
+  <script src="./day9.js"></script>
+</body>
+</html>
