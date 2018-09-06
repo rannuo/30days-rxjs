@@ -37,21 +37,23 @@ var observerB = {
 =            BehaviorSubject            =
 =============================================*/
 
-// var subject = new Rx.BehaviorSubject(0);
+var subject = new Rx.BehaviorSubject(0);
 
-// subject.subscribe(observerA);
-// // "A next: 0"
-// subject.next(1);
-// // "A next: 1"
-// subject.next(2);
-// // "A next: 2"
-// subject.next(3);
-// // "A next: 3"
+subject.subscribe(observerA);
+// "A next: 0"
+subject.next(1);
+// "A next: 1"
+subject.next(2);
+// "A next: 2"
+subject.next(3);
+// "A next: 3"
 
-// setTimeout(() => {
-//     subject.subscribe(observerB); 
-//     // "B next: 3"
-// },3000)
+subject.complete()
+
+setTimeout(() => {
+    subject.subscribe(observerB); 
+    // "B next: 3"
+},3000)
 /*=====  End of BehaviorSubject  ======*/
 
 
@@ -82,21 +84,21 @@ var observerB = {
 =            AsyncSubject            =
 =============================================*/
 
-var subject = new Rx.AsyncSubject();
+// var subject = new Rx.AsyncSubject();
 
-subject.subscribe(observerA);
-subject.next(1);
-subject.next(2);
-subject.next(3);
-subject.complete();
-// "A next: 3"
-// "A complete!"
+// subject.subscribe(observerA);
+// subject.next(1);
+// subject.next(2);
+// subject.next(3);
+// subject.complete();
+// // "A next: 3"
+// // "A complete!"
 
-setTimeout(() => {
-    subject.subscribe(observerB);
-    // "B next: 3"
-    // "B complete!"
-},3000)
+// setTimeout(() => {
+//     subject.subscribe(observerB);
+//     // "B next: 3"
+//     // "B complete!"
+// },3000)
 
 /*=====  End of AsyncSubject  ======*/
 
